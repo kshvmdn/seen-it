@@ -1,9 +1,6 @@
 'use strict';
 
-var app = angular.module('seenitApp', [
-    'ngRoute',
-    'ngSanitize'
-  ])
+var app = angular.module('seenitApp', ['ngRoute', 'ngSanitize', 'angularMoment'])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {

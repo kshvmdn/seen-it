@@ -13,7 +13,7 @@
     </div>
     <div class="sub-heading">
       <p class="poster">
-        <i>Submitted by</i> <a href="http://reddit.com/u/{{ video.author }}" target="_blank">{{ video.author }}</a>
+        <i>Submitted by</i> <a href="http://reddit.com/u/{{ video.author }}" target="_blank">{{ video.author }}</a> <span am-time-ago="video.created_utc | amFromUnix"></span>
       </p>
       <p class="upvotes" title="{{ video.score }} upvote(s)">
         <i class="fa fa-thumbs-o-up"></i> {{ video.score }}
