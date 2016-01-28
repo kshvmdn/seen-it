@@ -1,7 +1,6 @@
 'use strict';
 
-var app = angular
-  .module('seenitApp', [
+var app = angular.module('seenitApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -21,6 +20,15 @@ var app = angular
       });
     $locationProvider.html5Mode(true);
   });
+
+app.filter('sanitize', ['$sce', function($sce) {
+  return function(value){
+    if (value) {
+      return $sce.trustAsHtml(value.replace('&lt;', '<').replace('&gt;', '>'));
+    }
+  };
+}]);
+
 app.factory('reddit', ['$http', '$q', function($http, $q) {
   var getJSON = function() {
     var deferred = $q.defer();
