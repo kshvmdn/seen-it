@@ -52,22 +52,32 @@ app.factory('reddit', ['$http', '$q', function($http, $q) {
   };
 }]);
 
-app.controller('MainCtrl', ['$scope', 'reddit', function($scope, reddit) {
+app.controller('MainCtrl', ['$scope', '$window', 'reddit', function($scope, $window, reddit) {
 
   $scope.video = '';
   $scope.currentIndex = 0;
 
-  var setNewVid = function() {
-    $scope.video = $scope.data[$scope.currentIndex];
+  var setNewVid = function(i) {
+    $scope.video = $scope.data[i].data;
+    console.log($scope.video.url);
   };
 
   reddit.getData().then(function(data) {
+    console.log(data);
     $scope.data = data;
-    setNewVid();
+    return setNewVid($scope.currentIndex);
   });
 
   $scope.next = function() {
     $scope.currentIndex++;
-    setNewVid();
+    if ($scope.currentIndex > $scope.data.length) {
+      $window.location.reload();
+    }
+    return setNewVid($scope.currentIndex);
+  };
+
+  $scope.rand = function() {
+    var i = Math.floor(Math.random() * ($scope.data.length - $scope.currentIndex)); // rand vid from all not watched
+    return setNewVid(i);
   };
 }]);

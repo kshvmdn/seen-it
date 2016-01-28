@@ -13,18 +13,21 @@
     </div>
     <div class="sub-heading">
       <p class="poster">
-        <i>by</i> <a href="http://reddit.com/u/{{ video.author }}" target="_blank">{{ video.author }}</a>
+        <i>Submitted by</i> <a href="http://reddit.com/u/{{ video.author }}" target="_blank">{{ video.author }}</a>
       </p>
-      <p class="upvotes" title="Upvotes">
+      <p class="upvotes" title="{{ video.score }} upvote(s)">
         <i class="fa fa-thumbs-o-up"></i> {{ video.score }}
       </p>
       <p class="comments">
-        <i class="fa fa-comments-o"></i> <a href="http://reddit.com{{ video.permalink }}" title="Comments" target="_blank">{{ video.num_comments }}</a>
+        <i class="fa fa-comments-o"></i> <a href="http://reddit.com{{ video.permalink }}" title="{{ video.num_comments }} comment(s)" target="_blank">{{ video.num_comments }}</a>
       </p>
     </div>
   </div>
   <div class="video">
     <div ng-bind-html="video.media_embed.content | sanitize"></div>
   </div>
-  <a class="btn" href="#" ng-show="video.permalink != null" ng-click="next()">Next</a>
+  <div class="btns">
+    <a class="btn next" href="#" ng-show="video.permalink != null" ng-click="next()">Next</a>
+    <a class="btn rand" href="#" ng-show="video.permalink != null" ng-click="rand()">Random</a>
+  </div>
 </div>
