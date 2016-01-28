@@ -1,0 +1,30 @@
+body {
+  font-family: "Lato";
+}
+
+.hero {
+  padding: 15px 50px;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.hero a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero .fa {
+  margin-right: 5px;
+  font-size: 70px;
+  color: #336699;
+}
+
+.hero .strong {
+  font-weight: 300;
+}
+
+.hero .weak {
+  letter-spacing: -2px;
+  font-weight: 100;
+  color: #336699;
+}
