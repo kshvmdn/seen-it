@@ -52,10 +52,22 @@ app.factory('reddit', ['$http', '$q', function($http, $q) {
   };
 }]);
 
-app.controller('MainCtrl', ['$scope', 'reddit', function($scope, reddit){
-  $scope.data = '';
+app.controller('MainCtrl', ['$scope', 'reddit', function($scope, reddit) {
+
+  $scope.video = '';
+  $scope.currentIndex = 0;
+
+  var setNewVid = function() {
+    $scope.video = $scope.data[$scope.currentIndex];
+  };
+
   reddit.getData().then(function(data) {
-    console.log(data);
     $scope.data = data;
+    setNewVid();
   });
+
+  $scope.next = function() {
+    $scope.currentIndex++;
+    setNewVid();
+  };
 }]);
