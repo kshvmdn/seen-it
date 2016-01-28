@@ -1,12 +1,8 @@
 'use strict';
 
 var app = angular.module('seenitApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch'
+    'ngSanitize'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
