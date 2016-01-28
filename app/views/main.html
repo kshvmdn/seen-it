@@ -1,9 +1,9 @@
 <div class="hero">
   <p><i class="fa fa-reddit-alien"></i> <span class="strong"><a href="/">seenit</a></span> <span class="weak">for reddit</span></p>
 </div>
-<div class="content"> 
+<div class="content">
   <div class="video">
     <div ng-bind-html="video.data.media_embed.content | sanitize"></div>
   </div>
-  <button ng-click="next()">next</button>
+  <a class="btn" href="#" ng-show="video.data != null" ng-click="next()">Next</a>
 </div>
