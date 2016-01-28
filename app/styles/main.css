@@ -38,24 +38,77 @@ body {
 }
 
 .content {
-  padding: 0 50px;
+  padding: 20px 50px;
+  padding-top: 0;
   margin: 0;
-  text-align: center;
+}
+
+.meta {
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+/*.heading, .sub-heading {
+  white-space: nowrap;
+  overflow: hidden;
+}*/
+
+.meta .heading p {
+  font-size: 23px;
+  margin-bottom: 5px;
+  display: inline-block;
+  line-height: default;
+}
+
+.meta .title {
+  margin-right: 5px;
+}
+
+.meta .subreddit {
+  font-weight: 100;
+  font-style: italic;
+}
+
+.meta .sub-heading p {
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+
+.meta .sub-heading p:not(:last-child):after {
+  content: ' | ';
+}
+
+.meta a {
+  color: inherit;
+  text-decoration: none;
+  transition: border 0.2s ease;
+  border-bottom: 1px solid rgba(0,0,0,0);
+}
+
+.meta a:hover {
+  border-bottom: 1px solid #ff5700; 
+}
+
+.meta .poster a {
+  font-weight: 400;
+}
+
+.content .video {
+  transition: all 0.2s ease;
 }
 
 a.btn {
-  margin-top: 20px;
+  margin-top: 30px;
   display: inline-block;
   outline: none;
-  *zoom: 1;
   text-align: center;
   text-decoration: none;
   font-weight: 400;
   vertical-align: middle;
   border: 1px solid;
   transition: all 0.2s ease;
-  box-sizing: border-box;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.01);
   cursor: pointer;
   border-radius: 3px;
   padding: 0.5625em 1.5em;
@@ -66,5 +119,4 @@ a.btn {
 a.btn:hover {
   background: #336699;
   color: #fff;
-  border-color: #4682B4;    
 }
