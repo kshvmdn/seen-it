@@ -8,7 +8,7 @@ git clone http://github.com/kshvmdn/seen-it
 ```
 
 ```
-bower install
+bower install && npm install
 ```
 
 ```
