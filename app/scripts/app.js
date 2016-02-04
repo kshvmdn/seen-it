@@ -28,12 +28,13 @@ app.factory('reddit', ['$http', '$q', function($http, $q) {
     $http.get('https://www.reddit.com/r/videos.json?limit=100')
       .success(function(data) {
         var posts = data.data.children;
+        var validPosts = [];
         posts.forEach(function(post, i) {
-          if (post.data.is_self) {
-            posts.splice(i, 1);
+          if ( !post.data.is_self && !post.data.stickied) {
+            validPosts.push(post);
           }
         });
-        deferred.resolve(posts);
+        deferred.resolve(validPosts);
       })
       .error(function(err) {
         deferred.reject(err);
@@ -56,7 +57,7 @@ app.controller('MainCtrl', ['$scope', '$window', 'reddit', function($scope, $win
   };
 
   reddit.getData().then(function(data) {
-    console.log(data);
+    // console.log(data);
     $scope.data = data;
     return setNewVid($scope.currentIndex);
   });
