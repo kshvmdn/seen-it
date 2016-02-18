@@ -4,7 +4,7 @@ Stream YouTube content from /r/videos. Replacement for the now deprecated reddit
 #### Usage
 
 ```
-git clone http://github.com/kshvmdn/seen-it
+git clone http://github.com/kshvmdn/seen-it && cd seen-it
 ```
 
 ```
