@@ -1,21 +1,15 @@
 # seen-it
-Stream YouTube content from /r/videos. Replacement for the now deprecated reddit.tv.
+Stream videos via /r/videos. Replacement for the now deprecated [reddit.tv](http://reddit.tv).
 
 #### Usage
 
-```
+```sh
 git clone http://github.com/kshvmdn/seen-it && cd seen-it
 ```
 
+```sh
+npm install
 ```
-bower install && npm install
-```
-
-```
-grunt serve
-```
-
-Open `localhost:PORT` (check the console for `PORT`) in your browser.
 
 #### Contribute
 
