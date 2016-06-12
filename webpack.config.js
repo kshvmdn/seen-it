@@ -20,10 +20,10 @@ var config = getConfig({
   html: function (context) {
     return {
       'index.html': context.defaultTemplate({
-        title: 'SEENIT',
+        title: 'SEEN IT',
         publicPath: isDev ? 'http://localhost:3000/' : '',
         meta: {
-          'name': 'SEENIT',
+          'name': 'SEEN IT',
           'description': 'A replacement for the deprecated reddit.tv, stream videos via /r/videos.'
         }
       })

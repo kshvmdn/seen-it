@@ -1,17 +1,25 @@
-import React, { PropTypes as T } from 'react'
+import React from 'react'
+
+import Header from 'components/Header/Header'
+import VideoContainer from 'components/Video/VideoContainer'
+import ButtonList from 'components/ButtonList/ButtonList'
 
 import styles from './styles.module.css'
 
-export class Container extends React.Component {
-  constructor(props, context) {
-    super(props, context)
+export default class Container extends React.Component {
+  constructor(props) {
+    super(props)
   }
 
   render() {
-    return (<div></div>)
+    return (
+      <div className={styles.container}>
+        <Header />
+        <div className={styles.content}>
+          <VideoContainer />
+          <ButtonList />
+        </div>
+      </div>
+    )
   }
-}
-
-Container.contextTypes = {
-  router: T.object
 }

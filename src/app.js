@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { hashHistory } from 'react-router'
+import { browserHistory } from 'react-router'
 
 import './app.css'
 
@@ -11,7 +11,8 @@ const routes = makeRoutes()
 
 const mountNode = document.querySelector('#root')
 ReactDOM.render(
-  <App history={hashHistory}
+  <App
+    history={browserHistory}
     routes={routes} />,
   mountNode
 )
