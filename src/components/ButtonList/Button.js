@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { toSentenceCase } from 'utils/helpers'
-
 import styles from './styles.module.css'
 
 export default class Button extends React.Component {
@@ -15,7 +14,7 @@ export default class Button extends React.Component {
 
   render() {
     return (
-      <input className={styles.button} type='button' value={toSentenceCase(this.props.name)} onClick={this.handleClick.bind(this)} />
+      <button className={styles.button} onClick={this.handleClick.bind(this)}>{toSentenceCase(this.props.name)}</button>
     )
   }
 }

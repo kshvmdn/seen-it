@@ -3,9 +3,7 @@ import React from 'react'
 import Header from 'components/Header/Header'
 import VideoContainer from 'components/Video/VideoContainer'
 import ButtonList from 'components/ButtonList/ButtonList'
-
 import { getTopPosts } from 'utils/reddit'
-
 import styles from './styles.module.css'
 
 export default class Container extends React.Component {
