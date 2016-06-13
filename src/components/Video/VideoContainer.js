@@ -2,6 +2,8 @@ import React from 'react'
 import classNames from 'classnames'
 
 import Video from './Video'
+import normalizeTime from 'utils/normalize-time'
+import { formURL } from 'utils/reddit'
 import styles from './styles.module.css'
 
 export default class VideoContainer extends React.Component {
@@ -44,10 +46,42 @@ export default class VideoContainer extends React.Component {
       )
     }
 
+    console.log(this.state.video)
+
+    let video = this.state.video
+
+    // created = video.created
+    // title = video.title
+    // permalink = video.permalink
+    // url = video.url
+    // ups = video.ups
+    // comment count = video.num_comments
+    // thumbnail = video.thumbnail
+
     return (
       <div className={styles.wrapper}>
-        <Video currentVideo={this.state.video} />
-        <div className={styles.meta}></div>
+        <div className={styles.video_meta}>
+          <div className={styles.video_title}>
+            <a href={formURL(video.permalink)} title={video.title}>
+              {video.title}
+            </a>
+          </div>
+          <div className={styles.video_created}>
+            {normalizeTime(video.created)}
+          </div>
+          <div className={styles.video_stats}>
+            <div className={styles.upvotes}>
+              <span className={styles.number}>{video.ups}</span> upvotes
+            </div>
+            <div className={styles.comment_count}>
+              <span className={styles.number}>{video.num_comments}</span> comments
+            </div>
+          </div>
+          <div className={styles.video_url}>
+            <a href={video.url} title={video.title}>{video.url}</a>
+          </div>
+        </div>
+        <Video currentVideo={video} />
       </div>
     )
   }

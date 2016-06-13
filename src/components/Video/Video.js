@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { unescapeHTML } from 'utils/helpers'
+import unescapeHTML from 'utils/unescape-html'
 import styles from './styles.module.css'
 
 export default class Video extends React.Component {
@@ -14,9 +14,7 @@ export default class Video extends React.Component {
 
   render() {
     return (
-      <div className={styles.video}>
-        <div dangerouslySetInnerHTML={this.video} />
-      </div>
+      <div className={styles.video} dangerouslySetInnerHTML={this.video}></div>
     )
   }
 }

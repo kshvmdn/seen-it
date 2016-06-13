@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { toSentenceCase } from 'utils/helpers'
+import toSentenceCase from 'utils/sentence-case'
 import styles from './styles.module.css'
 
 export default class Button extends React.Component {
