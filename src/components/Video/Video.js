@@ -9,7 +9,7 @@ export default class Video extends React.Component {
 
   render() {
     return (
-      <div className={styles.video}></div>
+      <div className={styles.video}>{this.props.currentVideo.media_embed.content}</div>
     )
   }
 }
