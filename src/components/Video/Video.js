@@ -8,6 +8,14 @@ export default class Video extends React.Component {
     super(props)
   }
 
+  componentWillMount() {
+    let currentVideo = this.props.currentVideo;
+
+    if (!currentVideo.media_embed || !currentVideo.media_embed.content || currentVideo.self_post) {
+      // TODO
+    }
+  }
+
   get video() {
     return {__html: unescapeHTML(this.props.currentVideo.media_embed.content)}
   }

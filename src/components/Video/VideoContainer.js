@@ -46,17 +46,7 @@ export default class VideoContainer extends React.Component {
       )
     }
 
-    console.log(this.state.video)
-
     let video = this.state.video
-
-    // created = video.created
-    // title = video.title
-    // permalink = video.permalink
-    // url = video.url
-    // ups = video.ups
-    // comment count = video.num_comments
-    // thumbnail = video.thumbnail
 
     return (
       <div className={styles.wrapper}>
@@ -81,7 +71,9 @@ export default class VideoContainer extends React.Component {
             <a href={video.url} title={video.title}>{video.url}</a>
           </div>
         </div>
-        <Video currentVideo={video} />
+        <Video
+          currentVideo={video}
+          onError={this.props.onError} />
       </div>
     )
   }
