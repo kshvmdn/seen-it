@@ -1,3 +1,5 @@
-:root {
+@import url('colors.css');
 
+:root {
+  --header-height: 70px;
 }
