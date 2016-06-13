@@ -1,14 +1,21 @@
-# seen-it
+## seen-it
 Stream videos via /r/videos. Replacement for the now deprecated [reddit.tv](http://reddit.tv).
 
 #### Usage
 
 ```sh
-git clone http://github.com/kshvmdn/seen-it && cd seen-it
+# clone
+git clone https://github.com/kshvmdn/seen-it.git && cd seen-it
 ```
-
+  
 ```sh
+# install deps
 npm install
+```
+  
+```sh
+# run app
+npm start
 ```
 
 #### Contribute
