@@ -1,0 +1,54 @@
+@import url('../../styles/base.css');
+@import url('../../styles/colors.css');
+
+.wrapper {
+  color: darkgrey;
+  font-size: 1.5em;
+}
+
+.video_meta {
+  margin-bottom: 25px;
+
+  div {
+    margin: 8px auto;
+  }
+  a {
+    &:hover {
+      letter-spacing: 0.5px;
+    }
+  }
+  .video_title {
+    color: dimgrey;
+    font-size: 1.5em;
+  }
+  .video_created,
+  .video_url,
+  .video_stats {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.3em;
+  }
+  .video_stats {
+    .upvotes,
+    .comment_count {
+      display: inline-block;
+      margin: auto 10px;
+
+      &:hover {
+        .number {
+          color: var(--reddit-red);
+        }
+      }
+    }
+  }
+}
+
+.video {
+  margin: 0 auto;
+  text-align: center;
+
+  iframe {
+    width: 100vh;
+    height: 50vh;
+  }
+}
