@@ -1,0 +1,33 @@
+@import url("../../styles/base.css");
+@import url("../../styles/colors.css");
+
+.topbar {
+  margin-bottom: 20px;
+  padding: 10px 20px 0 20px;
+  height: var(--header-height);
+  background-color: ghostwhite;
+
+  * {
+    display: inline-block;
+  }
+  .logo {
+    margin: 0 10px;
+    font-size: 1.25em;
+  }
+  .snoo {
+    width: auto;
+    height: var(--header-height);
+  }
+  section {
+    font-weight: 100;
+    font-size: 1.6em;
+
+    a {
+      font-weight: inherit;
+
+      &:hover {
+        color: var(--reddit-red);
+      }
+    }
+  }
+}

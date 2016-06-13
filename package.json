@@ -1,41 +1,51 @@
 {
-  "name": "seenit",
-  "private": true,
-  "devDependencies": {
-    "autoprefixer-core": "^5.2.1",
-    "grunt": "^0.4.5",
-    "grunt-angular-templates": "^0.5.7",
-    "grunt-concurrent": "^1.0.0",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-connect": "^0.9.0",
-    "grunt-contrib-copy": "^0.7.0",
-    "grunt-contrib-cssmin": "^0.12.0",
-    "grunt-contrib-htmlmin": "^0.4.0",
-    "grunt-contrib-imagemin": "^1.0.0",
-    "grunt-contrib-jshint": "^0.11.0",
-    "grunt-contrib-uglify": "^0.7.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-filerev": "^2.1.2",
-    "grunt-google-cdn": "^0.4.3",
-    "grunt-jscs": "^1.8.0",
-    "grunt-karma": "*",
-    "grunt-newer": "^1.1.0",
-    "grunt-ng-annotate": "^0.9.2",
-    "grunt-postcss": "^0.5.5",
-    "grunt-svgmin": "^2.0.0",
-    "grunt-usemin": "^3.0.0",
-    "grunt-wiredep": "^2.0.0",
-    "jit-grunt": "^0.9.1",
-    "jshint-stylish": "^1.0.0",
-    "karma-jasmine": "*",
-    "karma-phantomjs-launcher": "*",
-    "time-grunt": "^1.0.0"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
+  "name": "seen-it",
+  "version": "1.0.0",
+  "description": "Stream videos via /r/videos. Replacement for the deprecated reddit.tv.",
   "scripts": {
-    "test": "grunt test"
+    "start": "cross-env NODE_ENV=development hjs-dev-server",
+    "clean": "rimraf dist",
+    "build": "npm run clean && cross-env NODE_ENV=production webpack",
+    "publish_pages": "gh-pages -d dist",
+    "ghpages": "npm run build && npm run publish_pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kshvmdn/seen-it.git"
+  },
+  "keywords": [],
+  "author": "Kashav Madan <kshvmdn@gmail.com> (kshvmdn.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kshvmdn/seen-it/issues"
+  },
+  "homepage": "https://github.com/kshvmdn/seen-it#readme",
+  "dependencies": {
+    "axios": "^0.12.0",
+    "classnames": "^2.2.5",
+    "moment": "^2.13.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-router": "^2.4.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "cross-env": "^1.0.8",
+    "css-loader": "^0.23.1",
+    "cssnano": "^3.7.0",
+    "file-loader": "^0.8.5",
+    "gh-pages": "^0.11.0",
+    "hjs-webpack": "^8.2.0",
+    "postcss-loader": "^0.9.1",
+    "precss": "^1.4.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1"
   }
 }

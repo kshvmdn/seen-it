@@ -1,0 +1,32 @@
+@import url('../../styles/base.css');
+@import url('../../styles/colors.css');
+
+.button_list {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  margin: 30px 15px 0 0;
+  padding: 0.5625em 1.5em;
+  outline: none;
+  border: 1px solid;
+  border-color: var(--reddit-blue);
+  border-radius: 3px;
+  background-color: #fff;
+  color: var(--reddit-blue);
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.25em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: var(--reddit-blue);
+    color: #fff;
+  }
+}
