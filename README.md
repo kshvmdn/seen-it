@@ -1,5 +1,5 @@
 ## seen-it
-Stream videos via /r/videos. Replacement for the now deprecated [reddit.tv](http://reddit.tv).
+Stream videos via [/r/videos](http://videos.reddit.com). Replacement for the now deprecated [reddit.tv](http://reddit.tv).
 
 #### Usage
 
@@ -20,4 +20,4 @@ npm start
 
 #### Contribute
 
-Feel free to open [an issue](https://github.com/kshvmdn/seen-it/issues) or make [a PR](https://github.com/kshvmdn/seen-it/pulls).
+Feel free to open an [issue](https://github.com/kshvmdn/seen-it/issues) for questions/requests or submit a [PR](https://github.com/kshvmdn/seen-it/pulls).
