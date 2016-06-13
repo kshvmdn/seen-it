@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import toSentenceCase from 'utils/sentence-case'
 import styles from './styles.module.css'
@@ -14,7 +15,9 @@ export default class Button extends React.Component {
 
   render() {
     return (
-      <button className={styles.button} onClick={this.handleClick.bind(this)}>{toSentenceCase(this.props.name)}</button>
+      <a href='#' className={classNames(styles.button, this.props.name)} onClick={this.handleClick.bind(this)}>
+        {toSentenceCase(this.props.name)}
+      </a>
     )
   }
 }

@@ -11,11 +11,11 @@ export default class ButtonList extends React.Component {
   render() {
     return (
       <div className={styles.button_list}>
-        <Button name='next'
-                onClick={this.props.onClick} />
         <Button name='previous'
                 onClick={this.props.onClick} />
         <Button name='random'
+                onClick={this.props.onClick} />
+        <Button name='next'
                 onClick={this.props.onClick} />
       </div>
     )
