@@ -1,6 +1,6 @@
 import React from 'react'
 
-import unescapeHTML from 'utils/unescape-html'
+import unescapeHTML from 'utils/unescapeHTML'
 import styles from './styles.module.css'
 
 export default class Video extends React.Component {

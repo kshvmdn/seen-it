@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 
 import Video from './Video'
-import normalizeTime from 'utils/normalize-time'
+import normalizeTime from 'utils/normalizeTime'
 import { formURL } from 'utils/reddit'
 import styles from './styles.module.css'
 

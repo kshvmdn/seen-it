@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import toSentenceCase from 'utils/sentence-case'
+import toSentenceCase from 'utils/sentenceCase'
 import styles from './styles.module.css'
 
 export default class Button extends React.Component {
