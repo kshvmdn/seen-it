@@ -3,7 +3,7 @@ import React from 'react'
 import Header from 'components/Header/Header'
 import VideoContainer from 'components/Video/VideoContainer'
 import ButtonList from 'components/ButtonList/ButtonList'
-import { getTopPosts } from 'utils/reddit'
+import { getTopSubmissions } from 'utils/reddit'
 import styles from './styles.module.css'
 
 export default class Container extends React.Component {
@@ -12,13 +12,16 @@ export default class Container extends React.Component {
 
     this.state = {
       videos: [],
-      currentVideoIndex: 0
+      currentVideoIndex: -1
     }
   }
 
   componentDidMount() {
-    getTopPosts('videos')
-      .then((res) => this.setState({ videos: res.data.data.children }))
+    getTopSubmissions('videos')
+      .then((res) => {
+        this.setState({ videos: res })
+        this.onButtonClick('next')
+      })
       .catch((err) => console.error(err))
   }
 
