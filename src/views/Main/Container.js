@@ -12,16 +12,13 @@ export default class Container extends React.Component {
 
     this.state = {
       videos: [],
-      currentVideoIndex: -1
+      currentVideoIndex: 0
     }
   }
 
   componentDidMount() {
     getTopSubmissions('videos')
-      .then((res) => {
-        this.setState({ videos: res })
-        this.onButtonClick('next')
-      })
+      .then((res) => this.setState({ videos: res }))
       .catch((err) => console.error(err))
   }
 
@@ -35,7 +32,7 @@ export default class Container extends React.Component {
       } while (newIndex === currentIndex)
     } else {
       // +1 if `next`, -1 if `previous`
-      newIndex += (event === 'next') ? (currentIndex < 100 ? 1 : 0) : (currentIndex > 0 ? -1 : 0)
+      newIndex += (event === 'next') ? (currentIndex < this.state.videos.length ? 1 : 0) : (currentIndex > 0 ? -1 : 0)
     }
 
     this.setState({
