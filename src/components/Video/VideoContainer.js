@@ -2,8 +2,10 @@ import React from 'react'
 import classNames from 'classnames'
 
 import Video from './Video'
+import ButtonList from 'components/ButtonList/ButtonList'
 import normalizeTime from 'utils/normalizeTime'
 import { formURL } from 'utils/reddit'
+
 import styles from './styles.module.css'
 
 export default class VideoContainer extends React.Component {
@@ -57,7 +59,7 @@ export default class VideoContainer extends React.Component {
             </a>
           </div>
           <div className={styles.video_created}>
-            {normalizeTime(video.created)}
+            {normalizeTime(video.created_utc)}
           </div>
           <div className={styles.video_stats}>
             <div className={styles.upvotes}>
@@ -71,9 +73,8 @@ export default class VideoContainer extends React.Component {
             <a href={video.url} title={video.title}>{video.url}</a>
           </div>
         </div>
-        <Video
-          currentVideo={video}
-          onError={this.props.onError} />
+        <Video currentVideo={video} />
+        <ButtonList onClick={this.props.onButtonClick} />
       </div>
     )
   }

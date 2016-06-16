@@ -52,10 +52,7 @@ export default class Container extends React.Component {
         <div className={styles.content}>
           <VideoContainer
             video={this.state.videos[this.state.currentVideoIndex]}
-            onError={this.onButtonClick.bind(this)} />
-
-
-          <ButtonList onClick={this.onButtonClick.bind(this)} />
+            onButtonClick={this.onButtonClick.bind(this)} />
         </div>
       </div>
     )
