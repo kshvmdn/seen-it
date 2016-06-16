@@ -44,7 +44,11 @@ export default class VideoContainer extends React.Component {
   render() {
     if (this.state.loading) {
       return (
-        <div className={classNames(styles.wrapper, styles.loading)}>Loading...</div>
+        <div className={styles.wrapper}>
+          <div className={styles.load_container}>
+            <div className={styles.load_speeding_wheel}></div>
+          </div>
+        </div>
       )
     }
 
@@ -54,7 +58,7 @@ export default class VideoContainer extends React.Component {
       <div className={styles.wrapper}>
         <div className={styles.video_meta}>
           <div className={styles.video_title}>
-            <a href={formURL(video.permalink)} title={video.title}>
+            <a href={formURL(video.permalink)} title={video.title} target='_blank'>
               {video.title}
             </a>
           </div>
